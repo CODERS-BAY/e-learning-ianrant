@@ -1,0 +1,40 @@
+e-Learning ERM
+———————
+
+
+person( (PK) person_ID:int(15), name:varchar(50) )
+
+
+person_role( (PK) person_ID:int(15), (FK) course_ID:int(15), role:varchar(50) )
+
+
+learning_module ( (PK) learning_module_ID:int(15), learning_module_name:varchar(50) )
+
+
+course ( (PK) course_ID:int(15), size:int(4), max_participant:int(2), max_moderator:int(2), course_name:varchar(50) )
+
+
+require ( (PK) course_ID:int(15), course_ID:int(15) )
+
+
+course_testing_module ( (PK) course_ID:int(15), testing_module_ID:int(15) )
+
+
+learning_module_per_course ( (PK) course_ID:int(15), learning_module_ID:int(15) )
+
+
+learning_object ( (FK) learning_object_name:varchar(50), learning_module_ID:int(15), type:varchar(50) )
+
+
+question ( (PK) question_ID:int(15), question_text:varchar(300), question_aw_true:varchar(300), question_aw_false_1:varchar(300), question_aw_false_1:varchar(300) )
+
+
+testing_module ( (PK) testing_module_ID:int(15), testing_module_time:date(10), testing_module_deadline:date(10), testing_module_mode:varchar(20), testing_module_definition:varchar(30) )
+
+
+question_testing_module ( (PK)testing_module_ID:int(15), question_ID:int(15) )
+
+
+learning_module_order ( (PK) learning_module_ID:int(15), learning_module_ID:int(15) )
+
+
